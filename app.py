@@ -1,11 +1,4 @@
-from fastapi import FastAPI, UploadFile, File
-import os
-import uuid
-
-app = FastAPI()
-
-UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+UPLOAD_DIR, exist_ok=True)
 
 
 @app.get("/")
@@ -51,3 +44,4 @@ async def upload_video(file: UploadFile = File(...)):
         "message": "Video uploaded successfully.",
         "filename": filename
     }
+    
